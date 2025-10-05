@@ -1168,22 +1168,6 @@
         "weatherZone": "Asunción"
     },
     {
-        "name": "Lima",
-        "country": "Peru",
-        "timeZone": "America/Lima",
-        "utc": "-05:00",
-        "flag": "pe.png",
-        "weatherZone": "Lima"
-    },
-    {
-        "name": "Lisbon",
-        "country": "Portugal",
-        "timeZone": "Europe/Lisbon",
-        "utc": "+01:00",
-        "flag": "pt.png",
-        "weatherZone": "Lisbon"
-    },
-    {
         "name": "Doha",
         "country": "Qatar",
         "timeZone": "Asia/Qatar",
@@ -1472,14 +1456,6 @@
         "weatherZone": "Kampala"
     },
     {
-        "name": "Kyiv",
-        "country": "Ukraine",
-        "timeZone": "Europe/Kyiv",
-        "utc": "+03:00",
-        "flag": "ua.png",
-        "weatherZone": "Kyiv"
-    },
-    {
         "name": "Abu Dhabi",
         "country": "United Arab Emirates",
         "timeZone": "Asia/Dubai",
@@ -1518,5 +1494,21 @@
         "utc": "-06:00",
         "flag": "us.png",
         "weatherZone": "Chicago"
+    },
+    {
+        "name": "Warsaw",
+        "country": "Poland",
+        "timeZone": "Europe/Warsaw",
+        "utc": "+02:00",
+        "flag": "pl.png",
+        "weatherZone": "Warsaw"
+    },
+    {
+        "name": "Furtwangen",
+        "country": "Germany",
+        "timeZone": "Europe/Berlin",
+        "utc": "+02:00",
+        "flag": "de.png",
+        "weatherZone": "Furtwangen"
     }
 ]

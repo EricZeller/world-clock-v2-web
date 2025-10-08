@@ -1,0 +1,29 @@
+name: Flutter CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Clone repository
+        run: git clone https://github.com/EricZeller/flutter-world-clock-v2.git flutter_app && cd flutter_app
+
+      - name: Setup Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          flutter-version: '3.35.5' # deine gewünschte Version
+
+      - name: Get dependencies
+        run: flutter pub get
+
+      - name: Build debug apk
+        run: flutter build web

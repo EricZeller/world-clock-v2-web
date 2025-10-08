@@ -26,4 +26,4 @@ jobs:
         run: cd flutter_app && flutter pub get
 
       - name: Build build web
-        run: flutter build web
+        run: cd flutter_app && flutter build web

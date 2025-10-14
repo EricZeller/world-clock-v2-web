@@ -28,14 +28,14 @@ jobs:
       - name: Build web 
         run: cd flutter_app && flutter build web --release
       
-      - name: Push build/web to Repo A
-        run: |
-          cd flutter_app/build/web
-          git init
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add .
-          git commit -m "Deploy Flutter Web build"
-          git push --force https://x-access-token:${{ secrets.REPO_TOKEN }}@github.com/EricZeller/world-clock-v2-web.git main
+      #- name: Push build/web to Repo A
+       # run: |
+        #  cd flutter_app/build/web
+        #  git init
+        #  git config user.name "github-actions[bot]"
+        #  git config user.email "github-actions[bot]@users.noreply.github.com"
+        #  git add .
+        #  git commit -m "Deploy Flutter Web build"
+        #  git push --force https://x-access-token:${{ secrets.REPO_TOKEN }}@github.com/EricZeller/world-clock-v2-web.git main
 
 

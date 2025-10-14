@@ -30,7 +30,7 @@ jobs:
       
       - name: Push build/web to Repo A
         run: |
-          cd build/web
+          cd flutter_app/build/web
           git init
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"

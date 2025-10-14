@@ -25,5 +25,17 @@ jobs:
       - name: Get dependencies
         run: cd flutter_app && flutter pub get
 
-      - name: Build build web
-        run: cd flutter_app && flutter build web
+      - name: Build web 
+        run: cd flutter_app && flutter build web --release
+      
+      - name: Push build/web to Repo A
+        run: |
+          cd build/web
+          git init
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add .
+          git commit -m "Deploy Flutter Web build"
+          git push --force https://x-access-token:${{ secrets.REPO_TOKEN }}@github.com/EricZeller/world-clock-v2-wev.git main
+
+

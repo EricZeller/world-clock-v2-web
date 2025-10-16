@@ -3,7 +3,7 @@ name: Deploy static content to Pages
 
 on:
   workflow_run:
-    workflows: ["Build Flutter Web"]  # <-- Name des anderen Workflows
+    workflows: ["Flutter CI"]  # <-- Name des anderen Workflows
     types:
       - completed
 

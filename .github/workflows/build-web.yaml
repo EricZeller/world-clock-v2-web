@@ -14,8 +14,11 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Clone repository
+      - name: Clone build repository
         run: git clone https://github.com/EricZeller/flutter-world-clock-v2.git flutter_app
+        
+      - name: Clone web repository
+        run: git clone https://github.com/EricZeller/world-clock-v2-web.git flutter_web_app
 
       - name: Setup Flutter
         uses: subosito/flutter-action@v2
@@ -28,14 +31,13 @@ jobs:
       - name: Build web 
         run: cd flutter_app && flutter build web --release
       
-      #- name: Push build/web to Repo A
-       # run: |
-        #  cd flutter_app/build/web
-        #  git init
-        #  git config user.name "github-actions[bot]"
-        #  git config user.email "github-actions[bot]@users.noreply.github.com"
-        #  git add .
-        #  git commit -m "Deploy Flutter Web build"
-        #  git push --force https://x-access-token:${{ secrets.REPO_TOKEN }}@github.com/EricZeller/world-clock-v2-web.git main
+      - name: Push build/web to Repo A
+        run: |
+          cp flutter_app/build/web flutter_web_app
+          cd flutter_web_app
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git commit -m "Deploy Flutter Web build"
+          git push https://x-access-token:${{ secrets.REPO_TOKEN }}@github.com/EricZeller/world-clock-v2-web.git main
 
 

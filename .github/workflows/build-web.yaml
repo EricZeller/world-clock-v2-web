@@ -26,7 +26,7 @@ jobs:
         run: cd flutter_app && flutter pub get
 
       - name: Build web 
-        run: cd flutter_app && grep '^version:' pubspec.yaml | cut -d ' ' -f2 && flutter build web --release
+        run: cd flutter_app && grep '^version:' pubspec.yaml | cut -d ' ' -f2 && flutter build web --release --base-href "/world-clock-v2-web/"
       
       - name: Push build/web to Repo A
         run: |
